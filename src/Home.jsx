@@ -8,13 +8,13 @@ import { BsCircleFill, BsFillCheckCircleFill, BsFillTrashFill } from 'react-icon
 function Home() {
     const [todos, setTodos] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:3001/get')
+        axios.get('https://todoback-t8h2.onrender.com/get')
             .then(result => setTodos(result.data))
             .catch(err => console.log(err));
     }, []);
 
     const handleEdit = (id) => {
-        axios.put('http://localhost:3001/update/' + id)
+        axios.put('https://todoback-t8h2.onrender.com/update/' + id)
             .then(result => {
                 location.reload();
             })
@@ -22,7 +22,7 @@ function Home() {
     };
 
     const handleDelete = (id) => {
-        axios.delete('http://localhost:3001/delete/' + id)
+        axios.delete('https://todoback-t8h2.onrender.com/delete/' + id)
             .then(result => {
                 location.reload();
             })
